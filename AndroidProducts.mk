@@ -16,3 +16,6 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/omni_violet.mk
+
+COMMON_LUNCH_CHOICES := \
+    omni_violet-eng
