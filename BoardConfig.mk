@@ -66,6 +66,10 @@ TARGET_OTA_ASSERT_DEVICE := violet
 # Avb
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -97,7 +101,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE := true
+BOARD_USES_QCOM_FBE_DECRYPTION := true
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -115,7 +119,11 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
+TW_OVERRIDE_SYSTEM_PROPS := \
+    "ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
-# Hack: prevent anti rollback
-PLATFORM_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 16.1.0
+BOARD_USES_METADATA_PARTITION := true
+PLATFORM_VERSION := 127
+PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
+PLATFORM_SECURITY_PATCH := 2127-12-31
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)

@@ -15,7 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_violet.mk
+    $(LOCAL_DIR)/twrp_violet.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_violet-eng
+    twrp_violet-eng
