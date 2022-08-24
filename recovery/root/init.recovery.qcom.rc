@@ -43,4 +43,26 @@ on boot
 on init
     setprop prepdecrypt.loglevel 2
 
+service wrapped-key /system/bin/wrappedkey-fix.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+	
+service replace-fstab /system/bin/replace-fstab.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    chmod 0777 /system/bin/wrappedkey-fix.sh
+    start wrapped-key
+
+on property:twrp.decrypt.done=true
+   chmod 0777 /system/bin/replace-fstab.sh
+   start replace-fstab
+
 import /init.recovery.qcom_decrypt.rc
