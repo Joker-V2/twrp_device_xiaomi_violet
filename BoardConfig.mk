@@ -148,3 +148,35 @@ TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
 TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+
+# Default (if not set) is NOT adding it to the ramdisk but internal storage.
+# To store magisk zip into the recovery ramdisk instead set to "true" here.
+# Ensure you understood the above note on the default behavior!
+INC_IN_REC_MAGISK := true
+
+############################ #########################################################
+# CUSTOM ADDONS - OPTIONAL # Custom addons! Yea fully optional but.. GREAT STUFF! :) #
+############################ #########################################################
+
+# SHRP can be extended as YOU wish! You can add whatever you can think of
+# e.g patching a ROM, adding stuff, apps, there is no limit ;)
+# Addons will be shown in the "Tweaks" section of SHRP.
+
+# Custom addon folder. Do not forget to put a "/" at the end of the path!
+SHRP_EXTERNAL_ADDON_PATH := "device/xiaomi/violet/addons/"
+# Addon #1 - Name
+SHRP_EXTERNAL_ADDON_1_NAME := "Encryption disabler"
+# Addon #1 - Description
+SHRP_EXTERNAL_ADDON_1_INFO := "A script which flashed firmware to both slots"
+# Addon #1 - Addon file name as ZIP (zip format is required)
+SHRP_EXTERNAL_ADDON_1_FILENAME := "Encryption disabler.zip"
+# Addon #1 - Free defineable button text the user need to press to actually install that addon
+# (Examples: Ok, Install, Flask, Enable, Disable, etc)
+SHRP_EXTERNAL_ADDON_1_BTN_TEXT := "Remove encryption"
+# Addon #1 - Text beeing shown when the installation was successful
+SHRP_EXTERNAL_ADDON_1_SUCCESSFUL_TEXT := "Encryption is removed successfully"
+# Addon #1 - Inject the addon into the recovery (if so: be sure that it will fit into the partition)
+# Default (if not set) is NOT adding this addon into the recovery ramdisk. That means:
+# If you do NOT set this the addon will be saved into the internal storage (i.e: $(SHRP_INTERNAL)/SHRP/addons)
+# Set this variable when true ONLY (do not use "false" or similiar)
+SHRP_INC_IN_REC_EXTERNAL_ADDON_1 := true
