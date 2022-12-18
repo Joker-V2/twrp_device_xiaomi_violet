@@ -144,8 +144,8 @@ TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 TW_INCLUDE_RESETPROP := true
 TW_EXCLUDE_TWRPAPP := true
-TW_Y_OFFSET := 80
-TW_H_OFFSET := -80
+#TW_Y_OFFSET := 80
+#TW_H_OFFSET := -80
 TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
@@ -180,3 +180,24 @@ SHRP_EXTERNAL_ADDON_1_SUCCESSFUL_TEXT := "Encryption is removed successfully"
 # If you do NOT set this the addon will be saved into the internal storage (i.e: $(SHRP_INTERNAL)/SHRP/addons)
 # Set this variable when true ONLY (do not use "false" or similiar)
 SHRP_INC_IN_REC_EXTERNAL_ADDON_1 := true
+
+# SHRPIFY
+SHRP_PATH := device/xiaomi/violet
+SHRP_MAINTAINER := Joker-V2
+SHRP_DEVICE_CODE := violet
+SHRP_EDL_MODE := 1
+SHRP_EXTERNAL := /sdcard1
+SHRP_INTERNAL := /data
+SHRP_OTG := /usb_otg
+SHRP_FLASH := 1
+SHRP_FONP_1 := /sys/class/leds/led:torch_0/brightness
+SHRP_FONP_2 := /sys/class/leds/led:torch_1/brightness
+SHRP_FONP_3 := /sys/class/leds/led:switch/brightness
+SHRP_FLASH_MAX_BRIGHTNESS := 200
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_REC_TYPE := Treble
+SHRP_DEVICE_TYPE := A_Only
+SHRP_STATUSBAR_RIGHT_PADDING := 40
+SHRP_STATUSBAR_LEFT_PADDING := 40
+SHRP_NOTCH := true
+SHRP_DARK := true
