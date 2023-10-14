@@ -43,6 +43,9 @@ TARGET_USES_UEFI := true
 # Compression
 PRODUCT_FS_COMPRESSION := 1
 
+# F2FS compression
+TW_ENABLE_FS_COMPRESSION := true
+
 # Platform
 TARGET_BOARD_PLATFORM := sm6150
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno618
