@@ -5,3 +5,6 @@ persist.sys.isUsbOtgEnabled=true
 vendor.gatekeeper.disable_spu=true
 fbe.data.wrappedkey=true
 ro.crypto.allow_encrypt_override=true
+
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
