@@ -1,7 +1,10 @@
 #device					       mount point             fstype   [device2] [length=]
 
-#/dev/block/bootdevice/by-name/system           /                        ext4    ro,barrier=1,discard,i_version                                       wait,avb
-#/dev/block/bootdevice/by-name/vendor           /vendor                  ext4    ro,barrier=1                                                         wait,recoveryonly
+system                                         /system                  erofs    ro                                                  wait,logical,first_stage_mount
+system_ext                                     /system_ext              erofs    ro                                                  wait,logical,first_stage_mount
+product                                        /product                 erofs    ro                                                  wait,logical,first_stage_mount
+vendor                                         /vendor                  erofs    ro                                                  wait,logical,first_stage_mount
+odm                                            /odm                     erofs    ro                                                  wait,logical
 /dev/block/bootdevice/by-name/boot             /boot                    emmc    defaults                                                             recoveryonly
 /dev/block/bootdevice/by-name/recovery         /recovery                emmc    defaults                                                             recoveryonly
 /dev/block/bootdevice/by-name/cache            /cache                   ext4    nosuid,noatime,nodev,barrier=1                                       wait
