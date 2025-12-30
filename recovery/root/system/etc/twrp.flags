@@ -25,4 +25,4 @@
 
 # Removable storage
 /usb_otg        vfat            /dev/block/sda1                    /dev/block/sda          flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable
-/external_sd    auto            /dev/block/mmcblk1p1               /dev/block/mmcblk1      flags=fsflags=utf8;display="SDcard";storage;wipeingui;removable
+/sdcard1        auto            /dev/block/mmcblk1p1               /dev/block/mmcblk1      flags=fsflags=utf8;display="SDcard";storage;wipeingui;removable
